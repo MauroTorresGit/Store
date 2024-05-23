@@ -14,7 +14,6 @@ header {
     justify-content: space-between;
     max-height: 60px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-
 }
 
 .titulo {
@@ -32,14 +31,14 @@ header {
     width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    border-radius: 10px 0 0 10px;
 }
 
 #search-button {
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-left: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 10px 10px 0;
     background-color: #007bff;
     color: white;
     cursor: pointer;
@@ -58,6 +57,7 @@ header {
 
 .container {
     display: flex;
+    min-height: 100vh;
 }
 
 .sidebar {
@@ -66,7 +66,7 @@ header {
     width: 200px;
     color: white;
     padding: 15px;
-    height: 100vh;
+    height: 150vh;
     position: absolute;
 }
 
@@ -126,6 +126,7 @@ header {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 .item:hover {
