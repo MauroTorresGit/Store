@@ -1,4 +1,4 @@
-const celulares = [
+/*const celulares = [
     {nombre: 'iPhone 13 pro max', precio: 680},
     {nombre: 'iPhone 14', precio: 700},
     {nombre: 'iPhone 14 pro', precio: 750},
@@ -40,4 +40,30 @@ if (celularesFiltrados.length === 1)
         else 
             {
                 alert ("No se encontraron celulares");
-            }   
+            }
+*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchButton = document.getElementById('search-button'); //selecciona el boton
+    const searchInput = document.getElementById('search-input'); //selecciona el input
+    const resultsContainer = document.getElementById('results-container'); 
+
+        function ejecutarBusqueda() {
+            const query = searchInput.value;
+            if (query) {
+                resultsContainer.textContent = `Resultados de la búsqueda: ${query}`;
+            } else {
+                resultsContainer.textContent = 'Por favor, ingrese un término de búsqueda.';
+            }
+        } 
+
+        searchButton.addEventListener('click', ejecutarBusqueda);
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                ejecutarBusqueda();
+            }
+        });  
+});
+
+
+
