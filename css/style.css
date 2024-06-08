@@ -1,30 +1,44 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Añadir esto para evitar problemas de margen/padding */
 }
 
 body {
     background-color: whitesmoke;
+    font-family: Arial, sans-serif;
 }
+
 /**********************Header**********************/
 
-header {
+.header {
     background-color: blueviolet;
-    padding: 30px;
-    justify-content: space-between;
-    max-height: 60px;
+    padding: 10px 20px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100px;
 }
 
 .titulo {
-    text-align: left;
+    margin: 0;
     color: white;
+}
+
+.search-cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
 }
 
 #search-input {
@@ -53,12 +67,14 @@ header {
     text-align: center;
 }
 
-/**********************Menu Lateral**********************/
+/**********************Main Container**********************/
 
-.container {
+.main-container {
     display: flex;
-    min-height: 100vh;
+    margin-top: 0px; /* Ajustar para evitar la superposición con el header */
 }
+
+/**********************Menu Lateral**********************/
 
 .sidebar {
     background-color: rgb(80, 24, 133);
@@ -66,8 +82,10 @@ header {
     width: 200px;
     color: white;
     padding: 15px;
-    height: 150vh;
-    position: absolute;
+    height: calc(100vh - 60px); /* Ajustar la altura para evitar la superposición con el header */
+    position: fixed;
+    top: 100px; /* Ajustar para evitar la superposición con el header */
+    left: 0;
 }
 
 .sidebar ul {
@@ -158,25 +176,23 @@ header {
     font-size: medium ;
 }
 
-
-
-
 @media (max-width: 768px) {
     .contenedor-items {
-        margin-left: 0; /* Ajusta el margen para pantallas más pequeñas */
+        margin-left: 0;
         padding: 20px;
-        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas para pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .sidebar {
         width: 100%;
         position: relative;
-        height: 100%;
+        height: auto;
+        top: 0;
     }
 }
 
 @media (max-width: 480px) {
     .contenedor-items {
-        grid-template-columns: 1fr; /* Cambia a 1 columna para pantallas muy pequeñas */
+        grid-template-columns: 1fr;
     }
 }
