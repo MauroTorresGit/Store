@@ -24,6 +24,20 @@ header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+.carrito-icono {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.carrito-icono img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    left: 1780px;
+    bottom: 90px;
+}
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -167,8 +181,26 @@ h2 {
     font-size: medium ;
 }
 
+.contenedor-carrito {
+    margin: 20px;
+    text-decoration: none;
+}
 
+#reiniciar-carrito {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
 
+#reiniciar-carrito:hover {
+    transition: all .3s;
+    background-color: #0056b3;
+}
 
 @media (max-width: 768px) {
     .contenedor-items {
